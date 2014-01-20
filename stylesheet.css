@@ -1,0 +1,68 @@
+body {
+    height: auto;
+}
+.wrapper {
+    height: auto;
+    margin-top: 2px;
+}
+
+.title{
+    color: white;
+    font-size: 500%;
+    width: auto;
+    margin-left: 35%;
+}
+
+.colorDeepSkyBlue{
+    color: deepskyblue;
+}
+
+.bg{
+    background: deepskyblue;
+}
+
+.navigation{
+    margin-left: 35%;
+    width: auto;
+}
+
+.infoItem{
+    color: deepskyblue;
+
+    font-size: 200%;
+}
+
+.infoBar{
+    color: white;
+    padding-left: 27%;
+    font-size: 200%;
+}
+
+.navItem{
+    color: white;
+
+}
+
+.navItem:hover{
+    color: black;
+    background: deepskyblue;
+    cursor: pointer;
+}
+
+.info{
+    color: red;
+    padding-left: 25%;
+}
+
+.roundBorder{
+    border: 1px solid deepskyblue;
+    border-radius: 25px;
+}
+
+.twoDivEqualHalf {
+    width: 49.6%;
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: auto;
+    text-align: center;
+}
