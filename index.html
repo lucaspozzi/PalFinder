@@ -3,8 +3,96 @@
 <head>
     <title>Pal Finder</title>
     <link rel='stylesheet' type='text/css' href='stylesheet/stylesheet.css' />
+    <link rel='stylesheet' type='text/css' href='stylesheet/element.css' />
+
+    <script type="text/javascript" src='library/canvasjs.min.js'></script>
+    <script type="text/javascript" src='library/jquery-2.0.3.min.js'></script>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            var chart = new CanvasJS.Chart("chartContainer",
+                    {
+                        title:{
+                            text: "Gaming Consoles Sold in 2012"
+                        },
+                        data: [
+                            {
+                                type: "pie",
+                                showInLegend: true,
+                                dataPoints: [
+                                    {  y: 4181563, legendText:"PS 3", indexLabel: "PlayStation 3" },
+                                    {  y: 2175498, legendText:"Wii", indexLabel: "Wii" },
+                                    {  y: 3125844, legendText:"Xbox", indexLabel: "Xbox 360" },
+                                    {  y: 1176121, legendText:"DS" , indexLabel: "Nintendo DS"},
+                                    {  y: 1727161, legendText:"PSP", indexLabel: "PSP" },
+                                    {  y: 4303364, legendText:"3DS" , indexLabel: "Nintendo 3DS"},
+                                    {  y: 1717786, legendText:"Vita" , indexLabel: "PS Vita"}
+                                ]
+                            }
+                        ]
+                    });
+
+            chart.render();
+        }
+    </script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function ($) {
+
+            $('#checkbox').change(function(){
+                setInterval(function () {
+                    moveRight();
+                }, 3000);
+            });
+
+            var slideCount = $('#slider ul li').length;
+            var slideWidth = $('#slider ul li').width();
+            var slideHeight = $('#slider ul li').height();
+            var sliderUlWidth = slideCount * slideWidth;
+
+            $('#slider').css({ width: slideWidth, height: slideHeight });
+
+            $('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+
+            $('#slider ul li:last-child').prependTo('#slider ul');
+
+            function moveLeft() {
+                $('#slider ul').animate({
+                    left: + slideWidth
+                }, 200, function () {
+                    $('#slider ul li:last-child').prependTo('#slider ul');
+                    $('#slider ul').css('left', '');
+                });
+            };
+
+            function moveRight() {
+                $('#slider ul').animate({
+                    left: - slideWidth
+                }, 200, function () {
+                    $('#slider ul li:first-child').appendTo('#slider ul');
+                    $('#slider ul').css('left', '');
+                });
+            };
+
+            $('a.control_prev').click(function () {
+                moveLeft();
+            });
+
+            $('a.control_next').click(function () {
+                moveRight();
+            });
+
+        });
+
+    </script>
+
 </head>
 <body>
+<!--<div id="chartContainer" style="height: 300px; width: 100%;"></div>-->
+
+
+
 <div class="wrapper bg">
     <div class="navigation">
         <span class="navItem"><a href="index.html">Home  |</a> </span>
@@ -31,17 +119,37 @@
 </div>
 
 <div class="wrapper">
+    <div class="twoDivEqualHalf">
+        <h1>Incredibly Basic Slider</h1>
+        <div id="slider">
+            <a href="#" class="control_next">>></a>
+            <a href="#" class="control_prev"><</a>
+            <ul>
+                <li>SLIDE 1</li>
+                <li style="background: #aaa;">SLIDE 2</li>
+                <li>SLIDE 3</li>
+                <li style="background: #aaa;">SLIDE 4</li>
+            </ul>
+        </div>
+
+        <div class="slider_option">
+            <input type="checkbox" id="checkbox">
+            <label for="checkbox">Autoplay Slider</label>
+        </div>
+    </div>
+
     <div class="twoDivEqualHalf roundBorder">
         <p class="infoItem">1. Post the Game</p>
         <p class="infoItem">2. Meet your Pal</p>
         <p class="infoItem">3. Enjoy the game</p>
     </div>
-<div class="twoDivEqualHalf">
-    <p>Booking form to be placed here</p>
-
 </div>
 
-</div>
+
+
+
+
+<div id="chartContainer"></div>
 
 </body>
 </html>
