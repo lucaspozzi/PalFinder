@@ -5,7 +5,7 @@
     <link rel='stylesheet' type='text/css' href='stylesheet/stylesheet.css' />
     <link rel='stylesheet' type='text/css' href='stylesheet/element.css' />
 
-    <script type="text/javascript" src='library/canvasjs.min.js'></script>
+    <script type="text/javascript" src='library/canvasjs.js'></script>
     <script type="text/javascript" src='library/jquery-2.0.3.min.js'></script>
 
     <script type="text/javascript">
@@ -13,20 +13,20 @@
             var chart = new CanvasJS.Chart("chartContainer",
                     {
                         title:{
-                            text: "Gaming Consoles Sold in 2012"
+                            text: "Popular Games in Pal Finder"
                         },
                         data: [
                             {
                                 type: "pie",
                                 showInLegend: true,
                                 dataPoints: [
-                                    {  y: 4181563, legendText:"PS 3", indexLabel: "PlayStation 3" },
-                                    {  y: 2175498, legendText:"Wii", indexLabel: "Wii" },
-                                    {  y: 3125844, legendText:"Xbox", indexLabel: "Xbox 360" },
-                                    {  y: 1176121, legendText:"DS" , indexLabel: "Nintendo DS"},
-                                    {  y: 1727161, legendText:"PSP", indexLabel: "PSP" },
-                                    {  y: 4303364, legendText:"3DS" , indexLabel: "Nintendo 3DS"},
-                                    {  y: 1717786, legendText:"Vita" , indexLabel: "PS Vita"}
+                                    {  y: 4181563, legendText:"Fifa", indexLabel: "Fifa" },
+                                    {  y: 2175498, legendText:"Cards", indexLabel: "Cards" },
+                                    {  y: 3125844, legendText:"Ping Pong", indexLabel: "Ping Pong" },
+                                    {  y: 1176121, legendText:"Tennis" , indexLabel: "Tennis"},
+                                    {  y: 1727161, legendText:"Chess", indexLabel: "Chess" },
+                                    {  y: 4303364, legendText:"Soccer" , indexLabel: "Soccer"},
+                                    {  y: 1717786, legendText:"Pool" , indexLabel: "Pool"}
                                 ]
                             }
                         ]
@@ -106,6 +106,9 @@
 
     </div>
 </div>
+
+
+
 <div class="wrapper">
 <div class="colorDeepSkyBlue title ">
     <span>Pal Finder</span>
@@ -118,16 +121,16 @@
     <span class="infoBar">Want to Play a game but no Partner ? ? ?</span>
 </div>
 
-<div class="wrapper">
+
+
+<!--<div class="wrapper">-->
     <div class="twoDivEqualHalf">
-        <h1>Incredibly Basic Slider</h1>
+
         <div id="slider">
             <a href="#" class="control_next">>></a>
             <a href="#" class="control_prev"><</a>
             <ul>
-                <li>SLIDE 1</li>
-                <li style="background: #aaa;">SLIDE 2</li>
-                <li>SLIDE 3</li>
+                <li style="background: #aaa;"><img src="img/foot.jpg" height="100%" width="100%"> </li>
                 <li style="background: #aaa;">SLIDE 4</li>
             </ul>
         </div>
@@ -136,20 +139,55 @@
             <input type="checkbox" id="checkbox">
             <label for="checkbox">Autoplay Slider</label>
         </div>
+
+
+    </div>
+    <div class="twoDivEqualHalf roundBorder">
+
+        <!--<p class="infoItem">1. Post the Game</p>-->
+        <!--<p class="infoItem">2. Meet your Pal</p>-->
+        <!--<p class="infoItem">3. Enjoy the game</p>-->
+        <img src="img/chart.png" height="60%" width="60%">
+
     </div>
 
-    <div class="twoDivEqualHalf roundBorder">
-        <p class="infoItem">1. Post the Game</p>
-        <p class="infoItem">2. Meet your Pal</p>
-        <p class="infoItem">3. Enjoy the game</p>
-    </div>
+<!--</div>-->
+
+
+
+<!--<div class="wrapper">-->
+    <!--<div class="twoDivEqualHalf">-->
+        <!--<h1>Incredibly Basic Slider</h1>-->
+        <!--<div id="slider">-->
+            <!--<a href="#" class="control_next">>></a>-->
+            <!--<a href="#" class="control_prev"><</a>-->
+            <!--<ul>-->
+                <!--<li>SLIDE 1</li>-->
+                <!--<li style="background: #aaa;">SLIDE 2</li>-->
+                <!--<li>SLIDE 3</li>-->
+                <!--<li style="background: #aaa;">SLIDE 4</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+
+        <!--<div class="slider_option">-->
+            <!--<input type="checkbox" id="checkbox">-->
+            <!--<label for="checkbox">Autoplay Slider</label>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="twoDivEqualHalf roundBorder">-->
+        <!--<p class="infoItem">1. Post the Game</p>-->
+        <!--<p class="infoItem">2. Meet your Pal</p>-->
+        <!--<p class="infoItem">3. Enjoy the game</p>-->
+    <!--</div>-->
+<!--</div>-->
+
+
+<div class="wrapper">
+    <div id="chartContainer"></div>
 </div>
 
 
-
-
-
-<div id="chartContainer"></div>
 
 </body>
 </html>
