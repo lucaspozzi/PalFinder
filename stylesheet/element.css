@@ -1,8 +1,10 @@
+
 #slider {
     position: relative;
     overflow: hidden;
     margin: 20px auto 0 auto;
     border-radius: 4px;
+
 }
 
 #slider ul {
