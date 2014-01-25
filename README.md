@@ -1,9 +1,17 @@
 Pal-Finder
 ==========
+---------------------------------------------------------
 
 Background
 ==========
 Pal Finder helps you find the right pal anywhere and anytime to play the sports that you want. We provide you with the right pal that matches your time, location and mainly skill set.  At Pal Finder, we give special focus on the strength, experience and nature of the pal so that you can find the warmth of friendship on while playing the competitive game.
+
+Constraints
+==========
+
+Cannot use any framework
+Cannot use any library
+
 
 Requirement
 ==========
