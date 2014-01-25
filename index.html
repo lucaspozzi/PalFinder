@@ -2,105 +2,25 @@
 <html>
 <head>
     <title>Pal Finder</title>
-    <link rel='stylesheet' type='text/css' href='stylesheet/stylesheet.css' />
-    <link rel='stylesheet' type='text/css' href='stylesheet/element.css' />
+    <link rel='stylesheet' type='text/css' href='stylesheet/stylesheet.css'/>
+    <link rel='stylesheet' type='text/css' href='stylesheet/element.css'/>
 
     <script type="text/javascript" src='library/canvasjs.js'></script>
     <script type="text/javascript" src='library/jquery-2.0.3.min.js'></script>
+    <script type="text/javascript" src='js/main.js'></script>
 
-    <script type="text/javascript">
-        window.onload = function () {
-            var chart = new CanvasJS.Chart("chartContainer",
-                    {
-                        title:{
-                            text: "Popular Games in Pal Finder"
-                        },
-                        data: [
-                            {
-                                type: "pie",
-                                showInLegend: true,
-                                dataPoints: [
-                                    {  y: 4181563, legendText:"Fifa", indexLabel: "Fifa" },
-                                    {  y: 2175498, legendText:"Cards", indexLabel: "Cards" },
-                                    {  y: 3125844, legendText:"Ping Pong", indexLabel: "Ping Pong" },
-                                    {  y: 1176121, legendText:"Tennis" , indexLabel: "Tennis"},
-                                    {  y: 1727161, legendText:"Chess", indexLabel: "Chess" },
-                                    {  y: 4303364, legendText:"Soccer" , indexLabel: "Soccer"},
-                                    {  y: 1717786, legendText:"Pool" , indexLabel: "Pool"}
-                                ]
-                            }
-                        ]
-                    });
-
-            chart.render();
-        }
-    </script>
-
-
-    <script type="text/javascript">
-        $(document).ready(function ($) {
-
-            $('#checkbox').change(function(){
-                setInterval(function () {
-                    moveRight();
-                }, 3000);
-            });
-
-            var slideCount = $('#slider ul li').length;
-            var slideWidth = $('#slider ul li').width();
-            var slideHeight = $('#slider ul li').height();
-            var sliderUlWidth = slideCount * slideWidth;
-
-            $('#slider').css({ width: slideWidth, height: slideHeight });
-
-            $('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
-
-            $('#slider ul li:last-child').prependTo('#slider ul');
-
-            function moveLeft() {
-                $('#slider ul').animate({
-                    left: + slideWidth
-                }, 200, function () {
-                    $('#slider ul li:last-child').prependTo('#slider ul');
-                    $('#slider ul').css('left', '');
-                });
-            };
-
-            function moveRight() {
-                $('#slider ul').animate({
-                    left: - slideWidth
-                }, 200, function () {
-                    $('#slider ul li:first-child').appendTo('#slider ul');
-                    $('#slider ul').css('left', '');
-                });
-            };
-
-            $('a.control_prev').click(function () {
-                moveLeft();
-            });
-
-            $('a.control_next').click(function () {
-                moveRight();
-            });
-
-        });
-
-    </script>
 
 </head>
 <body>
-<!--<div id="chartContainer" style="height: 300px; width: 100%;"></div>-->
-
-
 
 <div class="wrapper bg">
     <div class="navigation">
-        <span class="navItem"><a href="index.html">Home  |</a> </span>
-        <Span class="navItem"><a href="page/pal.html">Pals  |</a> </Span>
-        <Span class="navItem"><a href="page/book.html">Book  |</a> </Span>
-        <Span class="navItem"><a href="page/career.html">Career  |</a> </Span>
-        <Span class="navItem"><a href="page/aboutus.html">About Us  |</a> </Span>
-        <Span class="navItem"><a href="page/contact.html">Contact  |</a> </Span>
+        <span class="navItem"><a href="index.html">Home |</a> </span>
+        <Span class="navItem"><a href="page/pal.html">Pals |</a> </Span>
+        <Span class="navItem"><a href="page/book.html">Book |</a> </Span>
+        <Span class="navItem"><a href="page/career.html">Career |</a> </Span>
+        <Span class="navItem"><a href="page/aboutus.html">About Us |</a> </Span>
+        <Span class="navItem"><a href="page/contact.html">Contact |</a> </Span>
         <Span class="navItem"><a href="#">Source Code |</a> </Span>
 
 
@@ -108,13 +28,11 @@
 </div>
 
 
-
 <div class="wrapper">
-<div class="colorDeepSkyBlue title ">
-    <span>Pal Finder</span>
+    <div class="colorDeepSkyBlue title ">
+        <span>Pal Finder</span>
+    </div>
 </div>
-</div>
-
 
 
 <div class="wrapper bg roundBorder">
@@ -122,16 +40,18 @@
 </div>
 
 
-
-<!--<div class="wrapper">-->
+<div class="wrapper">
     <div class="twoDivEqualHalf">
 
         <div id="slider">
-            <a href="#" class="control_next">>></a>
+            <a href="#" class="control_next">></a>
             <a href="#" class="control_prev"><</a>
             <ul>
-                <li style="background: #aaa;"><img src="img/foot.jpg" height="100%" width="100%"> </li>
-                <li style="background: #aaa;">SLIDE 4</li>
+                <li style="background: #aaa;"><img src="img/pingpong.jpg" height="100%" width="100%"></li>
+                <li style="background: #aaa;"><img src="img/carrom.jpg" height="100%" width="100%"></li>
+                <li style="background: #aaa;"><img src="img/tennis.jpg" height="100%" width="100%"></li>
+
+
             </ul>
         </div>
 
@@ -143,51 +63,76 @@
 
     </div>
     <div class="twoDivEqualHalf roundBorder">
-
-        <!--<p class="infoItem">1. Post the Game</p>-->
-        <!--<p class="infoItem">2. Meet your Pal</p>-->
-        <!--<p class="infoItem">3. Enjoy the game</p>-->
         <img src="img/chart.png" height="60%" width="60%">
 
     </div>
 
-<!--</div>-->
+</div>
 
 
-
-<!--<div class="wrapper">-->
-    <!--<div class="twoDivEqualHalf">-->
-        <!--<h1>Incredibly Basic Slider</h1>-->
-        <!--<div id="slider">-->
-            <!--<a href="#" class="control_next">>></a>-->
-            <!--<a href="#" class="control_prev"><</a>-->
-            <!--<ul>-->
-                <!--<li>SLIDE 1</li>-->
-                <!--<li style="background: #aaa;">SLIDE 2</li>-->
-                <!--<li>SLIDE 3</li>-->
-                <!--<li style="background: #aaa;">SLIDE 4</li>-->
-            <!--</ul>-->
-        <!--</div>-->
-
-        <!--<div class="slider_option">-->
-            <!--<input type="checkbox" id="checkbox">-->
-            <!--<label for="checkbox">Autoplay Slider</label>-->
-        <!--</div>-->
-    <!--</div>-->
-
-    <!--<div class="twoDivEqualHalf roundBorder">-->
-        <!--<p class="infoItem">1. Post the Game</p>-->
-        <!--<p class="infoItem">2. Meet your Pal</p>-->
-        <!--<p class="infoItem">3. Enjoy the game</p>-->
-    <!--</div>-->
-<!--</div>-->
-
+<div class="wrapper bg roundBorder">
+    <span class="infoBar">Most Requested Pals at Pal Finder</span>
+</div>
 
 <div class="wrapper">
     <div id="chartContainer"></div>
 </div>
 
 
+<!--JS script kept at last so that page loads faster-->
+
+<script type="text/javascript">
+    displayChart('chartContainer');
+</script>
+<script type="text/javascript">
+    $(document).ready(function ($) {
+
+        $('#checkbox').change(function () {
+            setInterval(function () {
+                moveRight();
+            }, 3000);
+        });
+
+        var slideCount = $('#slider ul li').length;
+        var slideWidth = $('#slider ul li').width();
+        var slideHeight = $('#slider ul li').height();
+        var sliderUlWidth = slideCount * slideWidth;
+
+        $('#slider').css({ width: slideWidth, height: slideHeight });
+
+        $('#slider ul').css({ width: sliderUlWidth, marginLeft: -slideWidth });
+
+        $('#slider ul li:last-child').prependTo('#slider ul');
+
+        function moveLeft() {
+            $('#slider ul').animate({
+                left: +slideWidth
+            }, 200, function () {
+                $('#slider ul li:last-child').prependTo('#slider ul');
+                $('#slider ul').css('left', '');
+            });
+        };
+
+        function moveRight() {
+            $('#slider ul').animate({
+                left: -slideWidth
+            }, 200, function () {
+                $('#slider ul li:first-child').appendTo('#slider ul');
+                $('#slider ul').css('left', '');
+            });
+        };
+
+        $('a.control_prev').click(function () {
+            moveLeft();
+        });
+
+        $('a.control_next').click(function () {
+            moveRight();
+        });
+
+    });
+
+</script>
 
 </body>
 </html>
