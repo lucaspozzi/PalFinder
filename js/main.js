@@ -6,13 +6,13 @@ var displayChart = function (chartName) {
                     type: "pie",
                     showInLegend: true,
                     dataPoints: [
-                        {  y: 4181563, legendText: "Fifa", indexLabel: "Fifa" },
-                        {  y: 2175498, legendText: "Cards", indexLabel: "Cards" },
-                        {  y: 3125844, legendText: "Ping Pong", indexLabel: "Ping Pong" },
-                        {  y: 1176121, legendText: "Tennis", indexLabel: "Tennis"},
-                        {  y: 1727161, legendText: "Chess", indexLabel: "Chess" },
-                        {  y: 4303364, legendText: "Soccer", indexLabel: "Soccer"},
-                        {  y: 1717786, legendText: "Pool", indexLabel: "Pool"}
+                        {  y: 20, legendText: "Fifa", indexLabel: "Fifa" },
+                        {  y: 5, legendText: "Cards", indexLabel: "Cards" },
+                        {  y: 15, legendText: "Ping Pong", indexLabel: "Ping Pong" },
+                        {  y: 25, legendText: "Tennis", indexLabel: "Tennis"},
+                        {  y: 10, legendText: "Chess", indexLabel: "Chess" },
+                        {  y: 10, legendText: "Soccer", indexLabel: "Soccer"},
+                        {  y: 15, legendText: "Pool", indexLabel: "Pool"}
                     ]
                 }
             ]
@@ -21,6 +21,11 @@ var displayChart = function (chartName) {
     chart.render();
 }
 
+
+var displayMainSlider = function(sliderName){
+
+
+}
 
 
 
