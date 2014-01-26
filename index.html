@@ -44,22 +44,12 @@
     <div class="twoDivEqualHalf">
 
         <div id="slider">
-            <a href="#" class="control_next">></a>
-            <a href="#" class="control_prev"><</a>
             <ul>
                 <li style="background: #aaa;"><img src="img/pingpong.jpg" height="100%" width="100%"></li>
                 <li style="background: #aaa;"><img src="img/carrom.jpg" height="100%" width="100%"></li>
                 <li style="background: #aaa;"><img src="img/tennis.jpg" height="100%" width="100%"></li>
-
-
             </ul>
         </div>
-
-        <div class="slider_option">
-            <input type="checkbox" id="checkbox">
-            <label for="checkbox">Autoplay Slider</label>
-        </div>
-
 
     </div>
     <div class="twoDivEqualHalf roundBorder">
@@ -69,7 +59,23 @@
 
 </div>
 
+<!---------------------------------------------------------------------------------->
+<div class="wrapper bg roundBorder">
+    <span class="infoBar" id="cmbSpan">Pricing For Pal </span>
+    <select id="cmbShowCharacterStat">
+        <option value="">Select Pal</option>
+        <option value="00">soccer</option>
+        <option value="10">tennis</option>
+        <option value="20">ping pong</option>
+        <option value="30">pool</option>
+        <option value="40">card</option>
+        <option value="50">chess</option>
+    </select>
+    <input type="button" value="Show" onclick="displayCharacterStat()" id="btnShowCharacterStat"/>
+</div>
 
+
+<!------------------------------------------------------------------------------------------>
 <div class="wrapper bg roundBorder">
     <span class="infoBar">Most Requested Pals at Pal Finder</span>
 </div>
@@ -85,13 +91,13 @@
     displayChart('chartContainer');
 </script>
 <script type="text/javascript">
+
+
     $(document).ready(function ($) {
 
-        $('#checkbox').change(function () {
-            setInterval(function () {
-                moveRight();
-            }, 3000);
-        });
+        setInterval(function () {
+            moveRight();
+        }, 3000);
 
         var slideCount = $('#slider ul li').length;
         var slideWidth = $('#slider ul li').width();
@@ -104,14 +110,6 @@
 
         $('#slider ul li:last-child').prependTo('#slider ul');
 
-        function moveLeft() {
-            $('#slider ul').animate({
-                left: +slideWidth
-            }, 200, function () {
-                $('#slider ul li:last-child').prependTo('#slider ul');
-                $('#slider ul').css('left', '');
-            });
-        };
 
         function moveRight() {
             $('#slider ul').animate({
@@ -121,15 +119,6 @@
                 $('#slider ul').css('left', '');
             });
         };
-
-        $('a.control_prev').click(function () {
-            moveLeft();
-        });
-
-        $('a.control_next').click(function () {
-            moveRight();
-        });
-
     });
 
 </script>
