@@ -14,16 +14,13 @@
 <body>
 
 <div class="wrapper bg">
-    <div class="navigation">
+    <div class="navigation ">
         <span class="navItem"><a href="index.html">Home |</a> </span>
         <Span class="navItem"><a href="page/pal.html">Pals |</a> </Span>
         <Span class="navItem"><a href="page/book.html">Book |</a> </Span>
-        <Span class="navItem"><a href="page/career.html">Career |</a> </Span>
-        <Span class="navItem"><a href="page/aboutus.html">About Us |</a> </Span>
+        <Span class="navItem"><a href="page/reference.html">Reference |</a> </Span>
         <Span class="navItem"><a href="page/contact.html">Contact |</a> </Span>
-        <Span class="navItem"><a href="#">Source Code |</a> </Span>
-
-
+        <Span class="navItem"><a href="https://github.com/kshitijlohani/PalFinder">Source Code |</a> </Span>
     </div>
 </div>
 
@@ -61,8 +58,8 @@
 
 <!---------------------------------------------------------------------------------->
 <div class="wrapper bg roundBorder">
-    <span class="infoBar" id="cmbSpan">Pricing For Pal </span>
-    <select id="cmbShowCharacterStat">
+    <span class="infoBar" id="cmbSpan">Pricing/Availability Of Pal </span>
+    <select id="cmbPalPricing">
         <option value="">Select Pal</option>
         <option value="00">soccer</option>
         <option value="10">tennis</option>
@@ -71,7 +68,25 @@
         <option value="40">card</option>
         <option value="50">chess</option>
     </select>
-    <input type="button" value="Show" onclick="displayCharacterStat()" id="btnShowCharacterStat"/>
+    <input type="button" value="Show" onclick="displayPalPricing()" id="btnDisplayPalPricing"/>
+</div>
+
+
+<div class="wrapper colorDeepSkyBlue roundBorder" id="palPriceHidden">
+    <p class="infoItemDeepSkyBlue">Available Pals : 1</p>
+
+    <p class="infoItemDeepSkyBlue">Rate : novice $12/hour; pro:$18/hour; coach:$25/hour</p>
+    <span>Next week when database integration is taught, the data in this table will be pulled from database</span>
+    <span>For e.g, no of pals available, time when next pal will be fee, value will be dynamically displayed</span>
+
+    <p>as per the selection in the combo box</p>
+
+
+</div>
+
+<div class="wrapper">
+    <span id="countdown" class="infoItemDeepSkyBlue"></span>
+    <span class="countDownFont"> - Until next set of Pal</span>
 </div>
 
 
@@ -90,38 +105,7 @@
 <script type="text/javascript">
     displayChart('chartContainer');
 </script>
-<script type="text/javascript">
 
-
-    $(document).ready(function ($) {
-
-        setInterval(function () {
-            moveRight();
-        }, 3000);
-
-        var slideCount = $('#slider ul li').length;
-        var slideWidth = $('#slider ul li').width();
-        var slideHeight = $('#slider ul li').height();
-        var sliderUlWidth = slideCount * slideWidth;
-
-        $('#slider').css({ width: slideWidth, height: slideHeight });
-
-        $('#slider ul').css({ width: sliderUlWidth, marginLeft: -slideWidth });
-
-        $('#slider ul li:last-child').prependTo('#slider ul');
-
-
-        function moveRight() {
-            $('#slider ul').animate({
-                left: -slideWidth
-            }, 200, function () {
-                $('#slider ul li:first-child').appendTo('#slider ul');
-                $('#slider ul').css('left', '');
-            });
-        };
-    });
-
-</script>
 
 </body>
 </html>
