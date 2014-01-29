@@ -61,6 +61,47 @@ var displayPalPricing = function () {
 }
 
 
+function findPal(formName) {
+    var msg;
+    var tempArray = [];
+    var count = 0;
+    var count2 = 0;
+    var total = new Number(0);
+    var total2 = new Number(0);
+
+    for (i = 0; i < formName.timeReq.length; i++)
+        if (formName.timeReq[i].selected) {
+            msg = msg + '$ ' + formName.timeReq[i].value + "\n"
+            tempArray[count] = formName.timeReq[i].value;
+            total = total + Number(tempArray[count]);
+            count = count + 1;
+        }
+
+
+    for (i = 0; i < formName.level.length; i++)
+        if (formName.level[i].selected) {
+            msg = msg + '$ ' + formName.level[i].value + "\n"
+            tempArray[count2] = formName.level[i].value;
+            total2 = total2 + Number(tempArray[count2]);
+            count2 = count2 + 1;
+        }
+
+
+    //right now only two conditions kept
+    //to be added when database integration is taught
+    //so that the skill and rate of pal can be pulled form the database automatically
+
+    if (total != 4 && total2 != 400) {
+        alert("Andre is the right pal for you");
+    }
+    else {
+        alert("Kevin is the right pal for you");
+    }
+
+
+}
+
+
 function countdown() {
     var target_date = new Date("Feb 10, 2014").getTime();
     var days, hours, minutes, seconds;
@@ -77,7 +118,5 @@ function countdown() {
         countdown.innerHTML = days + "d, " + hours + "h, " + minutes + "m, " + seconds + "s";
     }, 1000);
 }
-
-
 
 
