@@ -2,7 +2,9 @@
 <html>
 <head>
     <title>Pal Finder</title>
-    <link rel='stylesheet' type='text/css' href='../stylesheet/stylesheet.css' />
+    <link rel='stylesheet' type='text/css' href='../stylesheet/stylesheet.css'/>
+    <script type="text/javascript" src='../library/jquery-2.0.3.min.js'></script>
+    <script type="text/javascript" src='../js/main.js'></script>
 
 </head>
 <body>
@@ -22,16 +24,56 @@
     </div>
 </div>
 <div>
+    <p class="infoItemDeepSkyBlue">Search Right Pal</p>
+
+    <form action="" method="post" name="searchPal">
+
+        <p>No of hours <input type="number" name="hour" Id="hour" min="1" max="10" value=1></p>
+
+        <p>Time <br/>
+            <select name="timeReq">
+                <option value=1> Morning</option>
+                <option value=2> Afternoon</option>
+                <option value=3> Evening</option>
+                <option value=4> Whole day</option>
+
+            </select>
+        </p>
+
+
+        <p>Select desired level of Pal<br/>
+            <select name="level">
+                <option value=100> Beginner</option>
+                <option value=200> Novice</option>
+                <option value=300> Professional</option>
+                <option value=400> Coach</option>
+
+            </select>
+        </p>
+
+
+        <input type="button" value="Find me pal" onClick=findPal(this.form)> <br/>
+
+
+    </form>
+
+    <p class="infoItemDeepSkyBlue">list of Pals</p>
+
     <img src="../img/kevin.jpg" height="150" width="150">
-    <p><h2>Kevin Anderson</h2></p>
-    <p>Chess - Novice</p>
-    <p>Tennis - pro</p>
+
+    <p>
+
+
+    <h2>Kevin Anderson</h2></p>
     <p>Weekdays 5pm-10 pm</p>
+
     <p>Weekend 7am - 10 pm </p>
 
     <img src="../img/andre.jpg" height="150" width="150">
-    <p><h2>Andre Johnson</h2></p>
-    <p>pool - pro</p>
+
+    <p>
+
+    <h2>Andre Johnson</h2></p>
     <p>Weekend 7am - 10 pm </p>
 </div>
 </body>
