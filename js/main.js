@@ -1,7 +1,10 @@
+var randOne,randTwo;
+
 $(document).ready(function ($) {
 
     $("#palPriceHidden").hide();
-    countdown();
+   // countdown();
+    generateRandomNumber();
 
     setInterval(function () {
         moveRight();
@@ -61,60 +64,94 @@ var displayPalPricing = function () {
 }
 
 
-function findPal(formName) {
+function findMyPal(){
+    validatePal();
+}
 
-    var tempArray = [];
-    var count = 0;
-    var count2 = 0;
-    var total = new Number(0);
-    var total2 = new Number(0);
-
-    for (i = 0; i < formName.timeReq.length; i++)
-        if (formName.timeReq[i].selected) {
-            tempArray[count] = formName.timeReq[i].value;
-            total = total + Number(tempArray[count]);
-            count = count + 1;
-        }
-
-
-    for (i = 0; i < formName.level.length; i++)
-        if (formName.level[i].selected) {
-            tempArray[count2] = formName.level[i].value;
-            total2 = total2 + Number(tempArray[count2]);
-            count2 = count2 + 1;
-        }
-
-
-    //right now only two conditions kept
-    //to be added when database integration is taught
-    //so that the skill and rate of pal can be pulled form the database automatically
-
-    if (total != 4 && total2 != 400) {
-        alert("Andre is the right pal for you");
+function validatePal(){
+    if( document.findPal.nameByUser.value == "" )
+    {
+        alert( "Please provide your name!" );
+        document.findPal.nameByUser.focus() ;
+        return false;
     }
-    else {
-        alert("Kevin is the right pal for you");
+    if( document.findPal.emailByUser.value == "" )
+    {
+        alert( "Please provide your Email!" );
+        document.findPal.emailByUser.focus() ;
+        return false;
+    }else{
+
+        validateEmailOverallFormat(document.findPal.emailByUser.value);
+        validateEmailHuskyFormat(document.findPal.emailByUser.value);
     }
+
+
+    if( document.findPal.totalByUser.value != randOne+randTwo )
+    {
+        alert( "You failed in pal Spam check" );
+        return false;
+    }
+
+    return( true );
 
 
 }
 
 
-function countdown() {
-    var target_date = new Date("Feb 10, 2014").getTime();
-    var days, hours, minutes, seconds;
-    var countdown = document.getElementById("countdown");
-    setInterval(function () {
-        var current_date = new Date().getTime();
-        var seconds_left = (target_date - current_date) / 1000;
-        days = parseInt(seconds_left / 86400);
-        seconds_left = seconds_left % 86400;
-        hours = parseInt(seconds_left / 3600);
-        seconds_left = seconds_left % 3600;
-        minutes = parseInt(seconds_left / 60);
-        seconds = parseInt(seconds_left % 60);
-        countdown.innerHTML = days + "d, " + hours + "h, " + minutes + "m, " + seconds + "s";
-    }, 1000);
+function validateEmailOverallFormat(email)
+{
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
+    {
+        return (true)
+    }
+    alert("You have entered an invalid email address!")
+    document.findPal.emailByUser.focus() ;
+    return (false)
 }
+
+function validateEmailHuskyFormat(email){
+    var temp=email.indexOf("@");
+    var huskyDomain=email.slice((temp+1),email.length);
+    console.log(huskyDomain);
+
+    if (huskyDomain=="husky.neu.edu")
+    {
+        return (true)
+    }
+    alert("Only @husky email address allowed right now")
+    document.findPal.emailByUser.focus() ;
+    return (false)
+
+}
+
+function generateRandomNumber(){
+    randOne = Math.floor((Math.random()*5)+1);
+    randTwo = Math.floor((Math.random()*9)+6);
+    $("#captchaOne").html(randOne);
+    $("#captchaTwo").html(randTwo);
+}
+
+
+
+
+
+//
+//function countdown() {
+//    var target_date = new Date("Feb 10, 2014").getTime();
+//    var days, hours, minutes, seconds;
+//    var countdown = document.getElementById("countdown");
+//    setInterval(function () {
+//        var current_date = new Date().getTime();
+//        var seconds_left = (target_date - current_date) / 1000;
+//        days = parseInt(seconds_left / 86400);
+//        seconds_left = seconds_left % 86400;
+//        hours = parseInt(seconds_left / 3600);
+//        seconds_left = seconds_left % 3600;
+//        minutes = parseInt(seconds_left / 60);
+//        seconds = parseInt(seconds_left % 60);
+//        countdown.innerHTML = days + "d, " + hours + "h, " + minutes + "m, " + seconds + "s";
+//    }, 1000);
+//}
 
 
