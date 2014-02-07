@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>Pal Finder</title>
-    <link rel='stylesheet' type='text/css' href='../stylesheet/stylesheet.css' />
+    <link rel='stylesheet' type='text/css' href='../stylesheet/stylesheet.css'/>
 
 </head>
 <body>
@@ -23,8 +22,30 @@
     </div>
 </div>
 
-<div class="wrapper bg roundBorder">
-    <span class="infoBar">Contact form will appear here after learnign php</span>
+<div style="margin:0 auto;width:75%;text-align:left">
+    <h2>All the fields are mandatory</h2>
+
+    <form action="../php/contact.php" method="post">
+        <p><b> Name :</b> <input type="text" name="name"/><br/>
+        <b>E-mail  :</b> <input type="text" name="email"/><br/>
+        <b>Subject :</b> <input type="text" name="subject"/><br/>
+            
+
+        <p><b>Your comments:</b><br/>
+            <textarea name="comments" rows="10" cols="40"></textarea></p>
+
+        <h4>Pal Spam Check</h4>
+
+        <p><b>Enter any number (0-5):</b> <input type="text" name="userValOne"/><br/>
+
+        <p><b> 2 + number you entered:</b> <input type="text" name="userValTotal"/><br/>
+
+        
+
+        <p><input type="submit" value="Send it!"></p>
+
+    </form>
+
 </div>
 
 </body>
