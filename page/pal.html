@@ -29,57 +29,59 @@
 </div>
 
 <div>
-    <form action="" method="post" name="searchPal">
-
-        <p>No of hours <input type="number" name="hour" Id="hour" min="1" max="10" value=1></p>
-
-        <p>Time <br/>
-            <select name="timeReq">
-                <option value=1> Morning</option>
-                <option value=2> Afternoon</option>
-                <option value=3> Evening</option>
-                <option value=4> Whole day</option>
-
-            </select>
-        </p>
 
 
-        <p>Select desired level of Pal<br/>
-            <select name="level">
-                <option value=100> Beginner</option>
-                <option value=200> Novice</option>
-                <option value=300> Professional</option>
-                <option value=400> Coach</option>
+    <form name="findPal" onsubmit="return(findMyPal());" method="post">
+        Name: <input type="text" name="nameByUser"><br>
+        Email: <input type="text" name="emailByUser"><br>
+        Date: <input type="date" name="dateByUser"><br>
+        Time: <input type="time" name="timeByUser"><br>
+        Pal skill level : <select name="Pal Level">
+            <option value="100">Novice</option>
+            <option value="200">Expert</option>
+            <option value="300">Professional</option>
+            <option value="300">Coach</option>
+        </select>
 
-            </select>
-        </p>
+        <h3>Pal Spam Filter</h3>
 
 
-        <input type="button" value="Find me pal" onClick=findPal(this.form)> <br/>
+        <div id="captchaOne"></div>
+        <div id="captchaTwo"></div>
+        What is the sum of above two numbers: <input type="text" name="totalByUser"><br>
 
-
+        <input type="submit" value="Submit">
     </form>
 
-    <div class="wrapper bg roundBorder">
-        <span class="infoBar">Here are the list of our available pals</span>
-    </div>
 
-    <img src="../img/kevin.jpg" height="150" width="150">
-
-    <p>
-
-
-    <h2>Kevin Anderson</h2></p>
-    <p>Weekdays 5pm-10 pm</p>
-
-    <p>Weekend 7am - 10 pm </p>
-
-    <img src="../img/andre.jpg" height="150" width="150">
-
-    <p>
-
-    <h2>Andre Johnson</h2></p>
-    <p>Weekend 7am - 10 pm </p>
 </div>
+
+<script type="text/javascript">
+
+</script>
+
+
+<!--<div class="wrapper bg roundBorder">-->
+<!--<span class="infoBar">Here are the list of our available pals</span>-->
+<!--</div>-->
+
+<!--<img src="../img/kevin.jpg" height="150" width="150">-->
+
+<!--<p>-->
+
+
+<!--<h2>Kevin Anderson</h2></p>-->
+<!--<p>Weekdays 5pm-10 pm</p>-->
+
+<!--<p>Weekend 7am - 10 pm </p>-->
+
+<!--<img src="../img/andre.jpg" height="150" width="150">-->
+
+<!--<p>-->
+
+<!--<h2>Andre Johnson</h2></p>-->
+<!--<p>Weekend 7am - 10 pm </p>-->
+
+
 </body>
 </html>
