@@ -1,9 +1,9 @@
-var randOne,randTwo;
+var randOne, randTwo;
 
 $(document).ready(function ($) {
 
     $("#palPriceHidden").hide();
-   // countdown();
+    // countdown();
     generateRandomNumber();
 
     setInterval(function () {
@@ -64,76 +64,90 @@ var displayPalPricing = function () {
 }
 
 
-function findMyPal(){
+function findMyPal() {
     validatePal();
 }
 
-function validatePal(){
-    if( document.findPal.nameByUser.value == "" )
-    {
-        alert( "Please provide your name!" );
-        document.findPal.nameByUser.focus() ;
+function validatePal() {
+    if (document.findPal.nameByUser.value == "") {
+        alert("Please provide your name!");
+        document.findPal.nameByUser.focus();
         return false;
     }
-    if( document.findPal.emailByUser.value == "" )
-    {
-        alert( "Please provide your Email!" );
-        document.findPal.emailByUser.focus() ;
+    if (document.findPal.emailByUser.value == "") {
+        alert("Please provide your Email!");
+        document.findPal.emailByUser.focus();
         return false;
-    }else{
+    } else {
 
         validateEmailOverallFormat(document.findPal.emailByUser.value);
         validateEmailHuskyFormat(document.findPal.emailByUser.value);
     }
 
 
-    if( document.findPal.totalByUser.value != randOne+randTwo )
-    {
-        alert( "You failed in pal Spam check" );
+    if (document.findPal.totalByUser.value != randOne + randTwo) {
+        alert("You failed in pal Spam check");
         return false;
     }
+
+
+    alert("Hello " +
+        document.findPal.nameByUser.value +
+        "your request for " +
+        getPalSkillLevel(document.findPal.skillByUser.value) +
+        " Pal has been received for " +
+        document.findPal.dateByUser.value);
+
 
     return( true );
 
 
 }
 
+function getPalSkillLevel(skill) {
+    var temp;
+    if (skill == "100") {
+        temp = "Novice";
+    } else if (skill == "200") {
+        temp = "Expert";
+    } else if (skill == "300") {
+        temp = "Professional"
+    } else if (skill == "400") {
+        temp == "Coach"
+    }
+    return temp;
+}
 
-function validateEmailOverallFormat(email)
-{
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
-    {
+
+function validateEmailOverallFormat(email) {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
         return (true)
     }
     alert("You have entered an invalid email address!")
-    document.findPal.emailByUser.focus() ;
+    document.findPal.emailByUser.focus();
     return (false)
 }
 
-function validateEmailHuskyFormat(email){
-    var temp=email.indexOf("@");
-    var huskyDomain=email.slice((temp+1),email.length);
+function validateEmailHuskyFormat(email) {
+    var temp = email.indexOf("@");
+    var huskyDomain = email.slice((temp + 1), email.length);
     console.log(huskyDomain);
 
-    if (huskyDomain=="husky.neu.edu")
-    {
+    if (huskyDomain == "husky.neu.edu") {
         return (true)
     }
     alert("Only @husky email address allowed right now")
-    document.findPal.emailByUser.focus() ;
+    document.findPal.emailByUser.focus();
     return (false)
 
 }
 
-function generateRandomNumber(){
-    randOne = Math.floor((Math.random()*5)+1);
-    randTwo = Math.floor((Math.random()*9)+6);
+function generateRandomNumber() {
+    randOne = Math.floor((Math.random() * 5) + 1);
+    randTwo = Math.floor((Math.random() * 9) + 6);
     $("#captchaOne").html(randOne);
     $("#captchaTwo").html(randTwo);
 }
-
-
-
 
 
 //
