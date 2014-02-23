@@ -24,8 +24,40 @@
 </div>
 
 <div class="wrapper bg roundBorder">
-    <span class="infoBar">Booking form will appear here after learnign php</span>
+    <span class="infoBar"><a href="../page/inventory.php">See Whole Inventory </a></span>
 </div>
+
+<form name="findPal"  action="booked.php"method="post">
+        <h3>Personal Info</h3>
+        Name: <input type="text" name="nameByUser"><br>
+        Email: <input type="text" name="emailByUser"><br>
+        
+        <h3>Event Info</h3>
+        Date: <input type="date" name="dateByUser"><br>
+        Hour: <input type="number" name="hour"><br>
+        <h3>Pal Info</h3>
+
+        <p>Sport Requested:<br />
+        <select name ="sport">
+            <option value="Tennis"> Tennis </option>
+            <option value="Chess"> Chess</option>
+        </select></p>
+
+        <p>Skill Requested: <br />
+            <select name ="skill">
+                <option value="Novice">  Novice</option>
+                <option value="Amateur"> Amateur</option>
+                <option value="Expert"> Expert</option>
+            </select>
+        </p>
+
+        <input type="submit" value="Submit">
+    </form>
+
+
+</div>
+
+
 
 </body>
 </html>

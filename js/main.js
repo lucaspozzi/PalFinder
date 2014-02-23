@@ -65,8 +65,29 @@ var displayPalPricing = function () {
 
 
 function findMyPal() {
-    validatePal();
+   // validatePal();
+    sendMail();
+
 }
+
+function sendMail() {
+    var link = "mailto:k.lohani01@gmail.com"
+             + "?cc=jaochng@gmail.com"
+             + "&subject=" + escape("This is my subject")
+             + "&body=" + escape("asdfasdf")
+    ;
+
+    window.location.href = link;
+
+    alert("after sendmail");
+
+    return (true);
+}
+
+
+
+
+
 
 function validatePal() {
     if (document.findPal.nameByUser.value == "") {
@@ -85,10 +106,10 @@ function validatePal() {
     }
 
 
-    if (document.findPal.totalByUser.value != randOne + randTwo) {
-        alert("You failed in pal Spam check");
-        return false;
-    }
+    // if (document.findPal.totalByUser.value != randOne + randTwo) {
+    //     alert("You failed in pal Spam check");
+    //     return false;
+    // }
 
 
     alert("Hello " +
@@ -148,6 +169,8 @@ function generateRandomNumber() {
     $("#captchaOne").html(randOne);
     $("#captchaTwo").html(randTwo);
 }
+
+
 
 
 //
