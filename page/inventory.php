@@ -21,31 +21,28 @@
         <span>Pal Finder</span>
     </div>
 </div>
+
+
 <?php
 
 echo "ID -- Name -- Sport -- Skill -- Hour"."</br>";
 echo "</br";
-$connection = mysql_connect('paldatabase.db.11389844.hostedresource.com', 'paldatabase', 'Nopassword@1'); //The Blank string is the password
+$connection = mysql_connect('paldatabase.db.11389844.hostedresource.com', 'paldatabase', 'Nopassword@1'); 
 mysql_select_db('paldatabase');
 
-$query = "SELECT * FROM user"; //You don't need a ; like you do in SQL
+$query = "SELECT * FROM user"; 
 $result = mysql_query($query);
 
-echo "<table>"; // start a table tag in the HTML
+echo "<table>"; 
 
-while($row = mysql_fetch_array($result)){   //Creates a loop to loop through results
-// echo $row['name'],'|',$row['sport'];  //$row['index'] the index here is a field name
-//echo "<tr><td>" . $row['name'] . " | "."</td><td>" . $row['sport'] ." | " . "</td></tr>". $row['skill'] ." | " . "</td></tr>";  //$row['index'] the index here is a field name
-echo  $row['ID'] . " -- ".$row['name'] . " -- " . $row['sport'] ." -- " . $row['skill'] ." -- ". $row['hour']."</br>" ;  //$row['index'] the index here is a field name
-
-
-
+while($row = mysql_fetch_array($result)){   
+echo  $row['ID'] . " -- ".$row['name'] . " -- " . $row['sport'] ." -- " . $row['skill'] ." -- ". $row['hour']."</br>" ;  
 
 }
 
-echo "</table>"; //Close the table in HTML
+echo "</table>"; 
 
-mysql_close(); //Make sure to close out the database connection
+mysql_close(); 
 
 
 ?>
